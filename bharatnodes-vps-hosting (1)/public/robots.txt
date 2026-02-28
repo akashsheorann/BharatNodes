@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://bharatnodes.com/sitemap.xml
+
+# Block common non-content paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /support/
+Disallow: /*.json$
+
+# Allow search engines to crawl the main content
+Allow: /$
+Allow: /about$
+Allow: /contact$
+Allow: /knowledge-base$
+Allow: /login$
+Allow: /register$
+
+# Crawl delay (optional)
+Crawl-delay: 1

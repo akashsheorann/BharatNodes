@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #ffffff;
+  --color-brand-secondary: #a1a1aa;
+  --color-brand-bg: #000000;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-brand-bg text-white antialiased;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  .minimal-border {
+    @apply border border-white/10;
+  }
+  .text-muted {
+    @apply text-zinc-500;
+  }
+  .text-gradient {
+    @apply text-white; /* Minimalist: no gradients by default */
+  }
+}
+
+@keyframes subtle-fade {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.animate-subtle {
+  animation: subtle-fade 4s ease-in-out infinite;
+}
+
+.stars-container {
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, #eee, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 50px 160px, #ddd, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 90px 40px, #fff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 130px 80px, #fff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 160px 120px, #ddd, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 250px 250px;
+  animation: twinkle 8s ease-in-out infinite;
+  opacity: 0.3;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
